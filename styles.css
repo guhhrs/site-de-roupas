@@ -80,6 +80,7 @@ ul.nav-right img {
     width: 100%;
     padding: 0;
     object-fit: cover;
+    /* position: fixed; */
 }
 
 .produtos--geral{

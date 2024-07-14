@@ -82,6 +82,36 @@ ul.nav-right img {
 }
 
 
+.product{
+    width: 100%;
+    max-width: 200px;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 20px;
+    justify-items: center;
+}
+
+li.grid-container{
+    position: static;
+    /* margin-top: 50px; */
+    padding: 92px 10px 10px 10px ;
+}
+
+/* ul#produto1{
+    margin-top: 50px;
+} */
+ 
+a{
+    color: gray;
+    text-decoration: none;
+}
+
     </style>
 </head>
 <body>
@@ -107,12 +137,38 @@ ul.nav-right img {
         </ul>
     </nav>
 
-    <li>
-        <ul><img src="imagens/produto1.webp" alt=""></ul>
-        <ul><img src="imagens/produto2.webp" alt=""></ul>
-        <ul><img src="imagens/produto3.webp" alt=""></ul>
-        <ul><img src="imagens/produto4.webp" alt=""></ul>
-        <ul><img src="imagens/produto5.webp" alt=""></ul>
+    <li class="grid-container">
+
+       <a href="produtos/produto1.html"> <div><ul id="produto--1"><img class="product" src="imagens/produto1.webp" alt="">
+            <h2>1of1 “OG 2.0" Black Hoodie</h2>
+            <p>preço: R$419,00 BRL</p></ul></div>
+</a>
+        <a href="produtos/produto2.html"><div><ul id="produto--2"><img class="product" src="imagens/produto2.webp" alt="">
+            <h2>1of1 “Zurple 2.0" Black Hoodie</h2>
+            <p>preço: R$419,00 BRL</p></ul></div>
+</a>
+        <a href="produtos/produto3.html"><div><ul id="produto--3"><img class="product" src="imagens/produto3.webp" alt="">
+            <h2>1of1 "Redrum" Black Hoodie</h2>
+            <p>preço: R$419,00 BRL</p></ul></div>
+</a>
+        <a href="produtos/produto4.html"><div><ul id="produto--4"><img class="product" src="imagens/produto4.webp" alt="">
+            <h2>1of1 "OG 2.0" Dad Hat</h2>
+            <p>preço: R$419,00 BRL</p></ul></div>
+</a>
+        <a href="produtos/produto5.html"><div><ul id="produto--5"><img class="product" src="imagens/produto5.webp" alt="">
+            <h2>1of1 "Redrum" Dad Hat</h2>
+            <p>preço: R$419,00 BRL</p></ul></div> 
+</a>
+
+
+
+
+
+
+        
+        
+       
+        
     </li>
 
 </body>

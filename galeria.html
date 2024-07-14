@@ -19,6 +19,7 @@ nav {
     border: 1px solid gray;
     position: fixed;
     width: 100%;
+    position: top;
 }
 
 nav ul {
@@ -79,7 +80,54 @@ ul.nav-right img {
     width: 90px;
     height: 50.94px;
     object-fit: cover;
+} 
+
+
+
+
+.imagens {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3px;
+    padding: 20px;
+    justify-items: center;
 }
+
+.product img{
+    width: 100%;
+    max-width: 200px;
+    height: auto;
+    margin-bottom: 10px;
+}
+li.imagens{
+    padding: 92px 20px 20px 20px;
+    display: grid;
+
+}
+
+ul#foto{
+    padding: 0;
+    margin: auto;
+}
+
+
+.product {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f0f0f0; /* Cor de fundo para visualização */
+    padding: 10px;
+}
+
+.product img {
+    max-width: 100%;
+    height: auto;
+}
+
+
+
 
 
     </style>
@@ -107,13 +155,40 @@ ul.nav-right img {
         </ul>
     </nav>
 
-    <li>
-        <ul><img src="imagens/foto1.jpg" alt=""></ul>
-        <ul><img src="imagens/foto2.jpg" alt=""></ul>
-        <ul><img src="imagens/foto 3.jpg" alt=""></ul>
-        <ul><img src="imagens/foto4.jpg" alt=""></ul>
-        <ul><img src="imagens/foto5.jpg" alt=""></ul>
-        <ul><img src="imagens/foto6.jpg" alt=""></ul> 
+    <li class="imagens">
+
+        <div class="product">
+            <ul id="foto"><img class="imagem1" src="imagens/foto1.jpg" alt=""></ul>
+        </div>
+
+        <div class="product">
+            <ul id="foto"><img class="imagem2" src="imagens/foto2.jpg" alt=""></ul>
+        </div>
+
+        <div class="product">
+            <ul id="foto"><img class="imagem3" src="imagens/foto3.jpg" alt=""></ul>  
+        </div>
+
+        <div class="product">
+          <ul id="foto"><img class="imagem4" src="imagens/foto4.jpg" alt=""></ul>
+        </div>
+
+        <div class="product">
+            <ul id="foto"><img class="imagem5" src="imagens/foto5.jpg" alt=""></ul>
+        </div>
+
+        <div class="product">
+            <ul id="foto"><img class="imagem6" src="imagens/foto6.jpg" alt=""></ul>
+        </div>
+
+        <div class="product">
+            <ul id="foto"><img class="imagem7" src="imagens/foto6.jpg" alt=""></ul>
+        </div> 
+        
+
+
+       
+        
     </li>
 
 
