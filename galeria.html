@@ -27,6 +27,7 @@ nav ul {
     padding: 0;
     margin: 0;
     display: flex;
+    align-items: center;
 }
 
 nav ul li {
@@ -44,8 +45,8 @@ nav ul.nav-right li a {
 }
 
 nav ul.nav-right li a img {
-    width: 50px;
-    height: 50px;
+    width: 25px;
+    height: 25px;
     object-fit: cover;
 }
 
@@ -125,11 +126,24 @@ ul#foto{
     max-width: 100%;
     height: auto;
 }
+#search-bar {
+    width: 100%;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
 
+#search-results li {
+    padding: 10px;
+    cursor: pointer;
+    border-bottom: 1px solid #ccc;
+    
+}
 
-
-
-
+#search-results li:hover {
+    background-color: #f0f0f0;
+}
     </style>
 </head>
 <body>
@@ -151,6 +165,11 @@ ul#foto{
             
 
         <ul class="nav-right">
+            <div class="search-container">
+                <input type="text" id="search-bar" placeholder="Pesquisar...">
+                <ul id="search-results"></ul>
+            </div>
+            <script src="script.js"></script>
             <li><a  href="#"><img src="imagens/lupa.png" alt="lupa"></a></li>
             <li><a  href="#"><img src="imagens/usuario1.png" alt="usuario"></a></li>
             <li><a  href="#"><img src="imagens/sacola.png" alt="sacola"></a></li>
