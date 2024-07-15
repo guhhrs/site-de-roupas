@@ -26,3 +26,23 @@ searchBar.addEventListener('input', (e) => {
         searchResults.innerHTML = '';
     }
 });
+const carousel = document.querySelector('.carousel-inner');
+const itens = document.querySelectorAll('.carousel-item');
+const nextButton = document.querySelector('.carousel-control.next');
+const prevButton = document.querySelector('.carousel-control.prev');
+let currentIndex = 0;
+
+function showItem(index) {
+  const offset = -index * 100;
+  carousel.style.transform = `translateX(${offset}%)`;
+}
+
+nextButton.addEventListener('click', () => {
+  currentIndex = (currentIndex + 1) % itens.length;
+  showItem(currentIndex);
+});
+
+prevButton.addEventListener('click', () => {
+  currentIndex = (currentIndex - 1 + itens.length) % itens.length;
+  showItem(currentIndex);
+});

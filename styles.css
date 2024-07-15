@@ -8,8 +8,8 @@ nav {
     display: flex;
     justify-content: space-between;
     background-color: white;
-    padding: 10px;
-    border: 1px solid gray;
+    padding: 0.625rem;
+    border: .0625rem solid gray;
     position: fixed;
     transition: top 0.3s; 
     z-index: 1000;
@@ -25,37 +25,37 @@ nav ul {
 }
 
 nav ul li {
-    margin-right: 20px;
+    margin-right: 1.25rem;
 }
 
 nav ul.nav-left li a,
 nav ul.nav-right li a {
     color: rgb(0, 0, 0);
     text-decoration: none;
-    padding: 10px 15px;
+    padding: .625rem .9375rem;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 nav ul.nav-right li a img {
-    width: 25px;
-    height: 25px;
+    width: 1.5625rem;
+    height: 1.5625rem;
     object-fit: cover;
 }
 
 main {
-    padding: 0px;
+    padding: 0rem;
 }
 
 footer {
     background-color: #333;
     color: white;
     text-align: center;
-    padding: 10px;
+    padding: .625rem;
     position: static;
     bottom: 0;
-    width: 100vw;
+    width: 98.8vw;
 }
 
 ul.nav-left {
@@ -63,22 +63,22 @@ ul.nav-left {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-left: 15px;
+    margin-left: .9375rem;
 }
 
 ul.nav-right img {
-    width: 40px;
-    height: 40px;
+    width: 2.5rem;
+    height: 2.5rem;
 }
 
 .logo img {
-    width: 90px;
-    height: 50.94px;
+    width: 5.625rem;
+    height: 3.1837rem;
     object-fit: cover;
 }
 
 #fundo{
-    width: 100%;
+    width: 100vw;
     padding: 0;
     object-fit: cover;
     /* position: fixed; */
@@ -89,32 +89,75 @@ ul.nav-right img {
     justify-content: space-between;
     list-style: none;
     padding: 0;
-    margin: 15pc 0px 20px;
+    margin: 15pc 0rem 1.25rem;
 }
 
 #produto1 #produto2{
    justify-content: space-between;
-    padding: 10px; 
+    padding: .625rem; 
 }
 
 video{
-    width: 200px;
+    width: 12.5rem;
 }
 #search-bar {
     width: 100%;
-    padding: 5px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+    padding: .3125rem;
+    border: .0625rem solid #ccc;
+    border-radius: .25rem;
     box-sizing: border-box;
 }
 
 #search-results li {
-    padding: 10px;
+    padding: .625rem;
     cursor: pointer;
-    border-bottom: 1px solid #ccc;
+    border-bottom: .0625rem solid #ccc;
     
 }
 
 #search-results li:hover {
     background-color: #f0f0f0;
 }
+.carousel {
+    position: relative;
+    width: 80%;
+    max-width: 600px;
+    overflow: hidden;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+  }
+  
+  .carousel-inner {
+    display: flex;
+    transition: transform 0.5s ease;
+  }
+  
+  .carousel-item {
+    min-width: 100%;
+    box-sizing: border-box;
+  }
+  
+  .carousel-item img {
+    width: 100%;
+    display: block;
+  }
+  
+  .carousel-control {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    border: none;
+    color: white;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 18px;
+  }
+  
+  .carousel-control.prev {
+    left: 10px;
+  }
+  
+  .carousel-control.next {
+    right: 10px;
+  }
