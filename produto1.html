@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Produto 1 - EXCLUSIVIST</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            background-color: white;
+            padding: .625rem;
+            border: .0625rem solid gray;
+            width: 100%;
+            position: static;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            align-items: center;
+        }
+
+        nav ul li {
+            margin-right: 1.25rem;
+        }
+
+        nav ul.nav-left li a,
+        nav ul.nav-right li a {
+            color: rgb(0, 0, 0);
+            text-decoration: none;
+            padding: .625rem .9375rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        nav ul.nav-right li a img {
+            width: 1.5625rem;
+            height: 1.5625rem;
+            object-fit: cover;
+        }
+
+        marquee {
+            background-color: black;
+            color: white;
+            width: 100%;
+            justify-content: center;
+            height: 30px;
+            padding: 5px;
+            direction: left;
+            text-align: center;
+        }
+
+        main {
+            padding: 1.25rem;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: .625rem;
+            position: static;
+            bottom: 0;
+            width: 100vh;
+        }
+
+        ul.nav-left {
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-left: .9375rem;
+        }
+
+        ul.nav-right img {
+            width: 2.5rem;
+            height: 2.5rem;
+        }
+
+        .logo img {
+            width: 5.625rem;
+            height: 3.1837rem;
+            object-fit: cover;
+        }
+
+        #search-bar {
+            width: 100%;
+            padding: .3125rem;
+            border: .0625rem solid #ccc;
+            border-radius: .25rem;
+            box-sizing: border-box;
+        }
+
+        #search-results li {
+            padding: .625rem;
+            cursor: pointer;
+            border-bottom: .0625rem solid #ccc;
+        }
+
+        #search-results li:hover {
+            background-color: #f0f0f0;
+        }
+
+        .produto {
+            display: flex;
+            padding: 20px;
+            align-items: center;
+            border: solid 1px rgb(116, 116, 116);
+            margin: 0 auto;
+            width: 1000px;
+            height: 910px;
+            margin-top: 150px;
+        }
+
+        .produto--esquerdo {
+            width: 600px;
+            height: 650px;
+            border: solid 1px gray;
+            margin-right: 30px;
+            margin-top: -210px;
+        }
+
+        .btn--img {
+            border: none;
+            background-color: transparent;
+        }
+
+        .btn--img2 img {
+            border: none;
+            background-color: transparent;
+            width: 100px;
+            height: 100px;
+        }
+
+        .btn--img img {
+            margin-top: 10px;
+            display: flex;
+            width: 100%;
+            height: 100%;
+            border: none;
+            background-color: transparent;
+        }
+
+        /* chat gpt */
+        .container {
+            display: flex;
+            max-width: 1200px;
+            margin: auto;
+            border: 1px solid gray;
+            margin-top: 120px;
+        }
+
+        .left-section, .right-section {
+            flex: 1;
+            padding: 20px;
+        }
+
+        .left-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 700px;
+        }
+
+        .left-section img {
+            max-width: 100%;
+            margin-bottom: 20px;
+        }
+
+        .right-section {
+            padding-left: 40px;
+            width: 400px;
+        }
+
+        .right-section h1 {
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+
+        .right-section p {
+            margin-bottom: 20px;
+            line-height: 1.5;
+        }
+
+        .price {
+            font-size: 1.5em;
+            margin-bottom: 20px;
+            color: #e74c3c;
+        }
+
+        .sizes {
+            margin-bottom: 20px;
+        }
+
+        .sizes label {
+            margin-right: 10px;
+        }
+
+        .sizes select {
+            padding: 5px;
+            font-size: 1em;
+        }
+
+        .buy-button {
+            width: 400px;
+            height: 70px;
+            text-align: center;
+            background-color: forestgreen;
+            color: white;
+            padding: 10px 20px;
+            font-size: 1em;
+            border: white;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .car-button {
+            margin-top: 12px;
+            text-align: center;
+            border: 1px solid rgb(167, 167, 167);
+            width: 400px;
+            height: 70px;
+            background-color: white;
+            color: rgb(0, 0, 0);
+            padding: 10px 20px;
+            font-size: 1em;
+            cursor: pointer;
+        }
+
+        .car-button:hover {
+            background-color: black;
+            color: white;
+            transition: 0.7s;
+        }
+
+        .buy-button:hover {
+            background-color: #ffffff;
+            color: black;
+            border: 1px solid black;
+            transition: 0.7s;
+        }
+
+        .buttons {
+            margin-top: 30px;
+        }
+
+        .sizes {
+            align-items: center;
+            background-color: rgb(255, 255, 255);
+            border: 1px solid gray;
+            width: 39px;
+            height: 30px;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+        .sizes#exgg {
+            width: 50px;
+        }
+
+        .sizes#gg {
+            width: 45px;
+        }
+
+        .sizes:hover {
+            color: black;
+            border: 2px solid black;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul class="nav-left">
+            <div class="logo">
+                <img src="imagens/1of1-logo1.webp" alt="logo">
+            </div>
+            <li><a href="index.html" target="_self">Início</a></li>
+            <li><a href="produtos.html" target="_self">Produtos</a></li>
+            <li><a href="sobre.html" target="_self">Sobre</a></li>
+            <li><a href="galeria.html" target="_self">Galeria</a></li>
+            <li><a href="Collab.html" target="_self">Collab</a></li>
+        </ul>
+        <ul class="nav-right">
+            <div class="search-container">
+                <input type="text" id="search-bar" placeholder="Pesquisar...">
+                <ul id="search-results"></ul>
+            </div>
+            <script src="script.js" defer></script>
+            <li><a href="#"><img src="imagens/lupa.png" alt="lupa"></a></li>
+            <li><a href="usuario.html"><img src="imagens/usuario1.png" alt="usuario"></a></li>
+            <li><a href="sacola.html"><img src="imagens/sacola.png" alt="sacola"></a></li>
+        </ul>
+    </nav> 
+    <marquee behavior="slide" direction="left">OS CLÁSSICOS ESTÃO DE VOLTA!!! TODOS OS PEDIDOS SERÃO ENVIADOS EM ATÉ 30 DIAS ÚTEIS</marquee>
+    <div class="container">
+        <div class="left-section">
+            <img id="mainImage" src="imagens/produto1.webp" alt="Imagem Principal do Produto">
+            <img id="backImage" src="imagens/produto1-costas.webp" alt="Imagem do Produto pelas Costas" style="display:none;">
+        </div>
+        <div class="right-section">
+            <h1>Moletom 1of1 “OG 2.0” Black Hoodie</h1>
+            <p class="price">R$ 419,00</p>
+            <div>
+                <label class="size" for="size">Tamanho:</label>
+                <button id="meuBotao" class="sizes" value="p">P</button>
+                <button id="meuBotao" class="sizes" value="m">M</button>
+                <button id="meuBotao" class="sizes" value="g">G</button>
+                <button class="sizes" id="gg" value="gg">GG</button>
+                <button class="sizes" id="exgg" value="exgg">EXGG</button>
+            </div>
+            <div class="buttons">
+                <button class="buy-button">Comprar</button>
+                <button class="car-button">Adicionar ao carrinho</button>
+            </div>
+        </div>
+    </div>
+    <script>
+        document.getElementById('mainImage').addEventListener('mouseover', function() {
+            this.style.display = 'none';
+            document.getElementById('backImage').style.display = 'block';
+        });
+        document.getElementById('backImage').addEventListener('mouseout', function() {
+            this.style.display = 'none';
+            document.getElementById('mainImage').style.display = 'block';
+        }); 
+
+        //adicionando cor do botão selecionar
+        
+        document.addEventListener('DOMContentLoaded', (event) => {
+        const botao = document.getElementById('meuBotao');
+    
+    botao.addEventListener('click', function() {
+        // Alternar entre preto e branco
+        if (botao.style.backgroundColor === 'black') {
+            botao.style.backgroundColor = 'white';
+        } else {
+            botao.style.backgroundColor = 'black';
+        }
+        
+        // Alternar a cor do texto para contraste
+        if (botao.style.color === 'white') {
+            botao.style.color = 'black';
+        } else {
+            botao.style.color = 'white';
+        }
+    });
+});
+
+
+
+    </script>
+</body>
+</html>
