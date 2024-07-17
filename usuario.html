@@ -3,136 +3,204 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fazer Login - EXCLUSIVIST</title>
+    <title>Cadastro de Usuário - EXCLUSIVIST</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gruppo&family=Rokkitt:ital,wght@0,100..900;1,100..900&family=Tenor+Sans&display=swap" rel="stylesheet">
+
     <style>
         body {
-    font-family: Arial, Helvetica, sans-serif;
-    margin: 0;
-    padding: 0;
-}
+            font-family: "Tenor Sans", sans-serif;
+            background-image: url(imagens/bg-cadastro3.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        } 
 
+        nav {
+            display: flex;
+            justify-content: space-between;
+            background-color: white;
+            padding: .625rem;
+            border: .0625rem solid gray;
+            position: relative;
+            width: 100%;
+        }
 
-nav {
-    display: flex;
-    justify-content: space-between;
-    background-color: white;
-    padding: .625rem;
-    border: .0625rem solid gray;
-    position: fixed;
-    width: 100%;
-}
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            align-items: center;
+        }
 
-nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    align-items: center;
-}
+        nav ul li {
+            margin-right: 1.25rem;
+        }
 
-nav ul li {
-    margin-right: 1.25rem;
-}
+        nav ul.nav-left li a,
+        nav ul.nav-right li a {
+            color: rgb(0, 0, 0);
+            text-decoration: none;
+            padding: .625rem .9375rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
 
-nav ul.nav-left li a,
-nav ul.nav-right li a {
-    color: rgb(0, 0, 0);
-    text-decoration: none;
-    padding: .625rem .9375rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
+        nav ul.nav-right li a img {
+            width: 1.5625rem;
+            height: 1.5625rem;
+            object-fit: cover;
+        }
 
-nav ul.nav-right li a img {
-    width: 1.5625rem;
-    height: 1.5625rem;
-    object-fit: cover;
-}
+        .container {
+            border: none;
+            max-width: 500px;
+            margin: 5rem auto;
+            padding: 2rem;
+            background-color: rgb(255, 255, 255);
+            box-shadow: 0 0 .9375rem white;
+            border-radius: none;
+            margin-bottom: 300px;
+            filter: blur(30%);
+        }
 
-main {
-    padding: 1.25rem;
-}
+        .container h1 {
+            text-align: center;
+            margin-bottom: 2rem;
+            color: #000000;
+        }
 
-footer {
-    background-color: #333;
-    color: white;
-    text-align: center;
-    padding: .625rem;
-    position: static;
-    bottom: 0;
-    width: 100vh;
-}
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
 
-ul.nav-left {
-    margin: 0 auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-left: .9375rem;
-}
+        .form-group label {
+            display: block;
+            margin-bottom: .5rem;
+            color: #ffffff;
+        }
 
-ul.nav-right img {
-    width: 2.5rem;
-    height: 2.5rem;
-    
-}
+        .form-group input {
+            width: 100%;
+            padding: .625rem;
+            border: .0625rem solid #ccc;
+            border-radius: .25rem;
+            box-sizing: border-box;
+        }
 
-.logo img {
-    width: 5.625rem;
-    height: 3.1837rem;
-    object-fit: cover;
-}
+        .form-group input:focus {
+            border-color: #007bff;
+            outline: none;
+        }
 
-#search-bar {
-    width: 100%;
-    padding: .3125rem;
-    border: .0625rem solid #ccc;
-    border-radius: .25rem;
-    box-sizing: border-box;
-}
+        .form-group button {
+            color: white;
+            width: 100%;
+            padding: .625rem;
+            background-color: black;
+            border: 1px solid gray;
+            border-radius: .25rem;
+            font-size: 1rem;
+            cursor: pointer;
+        }
 
-#search-results li {
-    padding: .625rem;
-    cursor: pointer;
-    border-bottom: .0625rem solid #ccc;
-    
-}
+        .form-group button:hover {
+            background-color: #0056b3;
+        }
 
-#search-results li:hover {
-    background-color: #f0f0f0;
-}
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: .625rem;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .logo img {
+            width: 5.625rem;
+            height: 3.1837rem;
+            object-fit: cover;
+        }
+
+        .search-container {
+            display: flex;
+            align-items: center;
+        }
+
+        #search-bar {
+            width: 100%;
+            padding: .3125rem;
+            border: .0625rem solid #ccc;
+            border-radius: .25rem;
+            box-sizing: border-box;
+        }
+
+        #search-results li {
+            padding: .625rem;
+            cursor: pointer;
+            border-bottom: .0625rem solid #ccc;
+        }
+
+        #search-results li:hover {
+            background-color: #f0f0f0;
+        }
+
     </style>
 </head>
 <body>
-    
     <nav>
         <ul class="nav-left">
             <div class="logo">
                 <img src="imagens/1of1-logo1.webp" alt="logo">
             </div>
-
             <li><a href="index.html" target="_self">Início</a></li>
             <li><a href="produtos.html" target="_self">Produtos</a></li>
             <li><a href="sobre.html" target="_self">Sobre</a></li>
             <li><a href="galeria.html" target="_self">Galeria</a></li>
             <li><a href="Collab.html" target="_self">Collab</a></li>
-
         </ul>
-            
-            
-
         <ul class="nav-right">
             <div class="search-container">
                 <input type="text" id="search-bar" placeholder="Pesquisar...">
                 <ul id="search-results"></ul>
             </div>
             <script src="script.js"></script>
-            <li><a  href="#"><img src="imagens/lupa.png" alt="lupa"></a></li>
-            <li><a  href="usuario.html"><img src="imagens/usuario1.png" alt="usuario"></a></li>
-            <li><a  href="sacola.html"><img src="imagens/sacola.png" alt="sacola"></a></li>
+            <li><a href="#"><img src="imagens/lupa.png" alt="lupa"></a></li>
+            <li><a href="usuario.html"><img src="imagens/usuario1.png" alt="usuario"></a></li>
+            <li><a href="sacola.html"><img src="imagens/sacola.png" alt="sacola"></a></li>
         </ul>
     </nav>
 
+
+    
+
+    <div class="container">
+        <h1>Cadastro de Usuário</h1>
+        <form action="submit_cadastro.php" method="post">
+            <div class="form-group">
+                <input placeholder="Insira o seu Nome de Usuário:" type="text" id="username" name="username" required>
+            </div>
+            <div class="form-group">
+                <input placeholder="Insira o seu Email:" type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <input placeholder="Insira a sua Senha" type="password" id="password" name="password" required>
+            </div>
+            <div class="form-group">
+                <button type="submit">Cadastrar</button>
+            </div>
+        </form>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 EXCLUSIVIST. Todos os direitos reservados.</p>
+    </footer>
 </body>
 </html>
