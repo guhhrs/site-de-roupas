@@ -198,8 +198,8 @@
 
         p.price {
             font-size: 2.5em;
-            margin: 24px 0px 0px;
-            color: #e74c3c;
+            margin: 0px;
+            color: #797979;
         }
 
         .sizes {
@@ -362,6 +362,12 @@
 
         .img-carrossel{
             width: 350px;
+        } 
+        
+        p.preco-antigo{
+            text-decoration: line-through;
+            margin: 0px;
+            color: #e74c3c;
         }
 
 
@@ -399,6 +405,7 @@
         </div>
         <div class="right-section">
             <h1>Moletom 1of1 “OG 2.0” Black Hoodie</h1>
+            <p class="preco-antigo">499,00</p>
             <p class="price">R$ 419,00</p>
             <p class="parcela">3X de 139,90 sem juros</p>
             <div>
@@ -516,6 +523,41 @@
 
             carousel.style.transform = `translateX(-${currentSlide * itemWidth}px)`;
         }
+
+
+        //carrinho de compras 
+
+        
+    document.querySelector('.car-button').addEventListener('click', function() {
+        // Obter os detalhes do produto
+        const productName = document.querySelector('.right-section h1').textContent;
+        const productPrice = document.querySelector('.price').textContent;
+        const productImage = document.querySelector('.left-section img').src;
+        const productQuantity = 1; // Quantidade padrão
+
+        // Criar um objeto de produto
+        const product = {
+            name: productName,
+            price: productPrice,
+            image: productImage,
+            quantity: productQuantity
+        };
+
+        // Obter o carrinho do localStorage
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+        // Adicionar o produto ao carrinho
+        cart.push(product);
+
+        // Atualizar o carrinho no localStorage
+        localStorage.setItem('cart', JSON.stringify(cart));
+
+        alert('Produto adicionado ao carrinho!');
+    });
+
+
+       
+
     </script>
 </body>
 </html>

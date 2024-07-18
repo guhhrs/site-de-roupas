@@ -515,6 +515,35 @@
 
             carousel.style.transform = `translateX(-${currentSlide * itemWidth}px)`;
         }
+
+        document.querySelector('.car-button').addEventListener('click', function() {
+        // Obter os detalhes do produto
+        const productName = document.querySelector('.right-section h1').textContent;
+        const productPrice = document.querySelector('.price').textContent;
+        const productImage = document.querySelector('.left-section img').src;
+        const productQuantity = 1; // Quantidade padrão
+
+        // Criar um objeto de produto
+        const product = {
+            name: productName,
+            price: productPrice,
+            image: productImage,
+            quantity: productQuantity
+        };
+
+        // Obter o carrinho do localStorage
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+        // Adicionar o produto ao carrinho
+        cart.push(product);
+
+        // Atualizar o carrinho no localStorage
+        localStorage.setItem('cart', JSON.stringify(cart));
+
+        alert('Produto adicionado ao carrinho!');
+    });
+
+
     </script>
 </body>
 </html>

@@ -112,7 +112,7 @@ ul.nav-right img {
     margin: 50px auto;
     background-color: #fff;
     padding: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 10px 10px 30px 30px rgba(0, 0, 0, 0.1);
 }
 
 .cart-container h1 {
@@ -207,6 +207,89 @@ ul.nav-right img {
     color: black;
     transition: 0.3s;
 }
+#payment-container {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border: 1px solid #ccc;
+            padding: 20px;
+            background-color: #fff;
+            z-index: 1000;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        #overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+        }
+        .payment-section {
+            margin-bottom: 10px; 
+            width: 100%;
+            display: flex;
+        } 
+      
+
+        input{
+            height: 25px;
+            width: 100%; 
+            text-align: left;
+        }
+
+        #info-cartao{
+            /* display: flex; */
+            width: 450px;
+        } 
+
+        #info-cartao input {
+            width: 100%;
+            /* margin-right: 6px ; */
+            justify-content: space-between;
+            gap: 6px;
+        }
+        .fechar{
+            width: 20px;
+            height: 20px; 
+            background-color: white;
+            border: 1px solid black;
+            text-align: center;
+            position: static; 
+            margin-left: 334px;
+        }
+
+        .fechar:hover{
+            background-color: rgb(255, 0, 0);
+            border: 1px solid red;
+            color: white; 
+            transition: 0.4s;
+        } 
+        .pagar{
+            width: 100%;
+            height: 38px;
+            background-color: green; 
+            color: white; 
+            border: 1px solid white;
+
+        }
+  
+        .pagar:hover{
+            background-color: rgb(0, 0, 0); 
+            border: 1px solid gray;
+        } 
+
+        .select#forma-pagamento{
+            width: 100px; 
+            height: 20px; 
+            text-align: center;
+
+        }
+
 
     </style>
 </head>
@@ -244,7 +327,7 @@ ul.nav-right img {
 
     <div class="cart-container">
         <h1>Carrinho de Compras</h1>
-        <div class="cart-item">
+        <!-- <div class="cart-item">
             <img src="imagens/produto4.webp" alt="Produto 1">
             <div class="item-details">
                 <h2>1of1 "OG 2.0" Dad Hat</h2>
@@ -253,8 +336,8 @@ ul.nav-right img {
                 <input type="number" id="quantity1" name="quantity1" value="1">
             </div>
             <button class="remove-btn">Remover</button>
-        </div>
-        <div class="cart-item">
+        </div> -->
+        <!-- <div class="cart-item">
             <img src="imagens/produto3.webp" alt="Produto 2">
             <div class="item-details">
                 <h2>1of1 "Redrum" Black Hoodie</h2>
@@ -263,16 +346,200 @@ ul.nav-right img {
                 <input type="number" id="quantity2" name="quantity2" value="1">
             </div>
             <button class="remove-btn">Remover</button>
-        </div>
+        </div> -->
         <div class="cart-total">
             <h3>Total: R$ 80,00</h3>
         </div>
-        <button class="checkout-btn">Finalizar Compra</button>
-        <button href="produtos.html" class="continuar-btn">Continuar Comprando</button>
+        <button class="checkout-btn" onclick="finalizarCompra()">Finalizar Compra</button>
+
+
+        <a href="produtos.html"> <button href="produtos.html" class="continuar-btn">Continuar Comprando</button></a>
+       
+    </div> 
+
+    <div id="overlay"></div>
+    <div id="payment-container">
+        <button class="fechar" onclick="fecharPagamento()">X</button> 
+
+        <h2>Informações de Pagamento</h2>
+
+        <div class="payment-section">
+            <input placeholder="Nome Completo" type="text" id="nome" required>
+        </div>
+        <div class="payment-section">
+            <input placeholder="Email" type="email" id="email" required>
+        </div>
+        <div class="payment-section">
+            <input placeholder="Confirmar Email" type="email" id="confirmar-email" required>
+        </div>
+        <div class="payment-section">
+            <input placeholder="CPF" type="text" id="cpf" required>
+
+            <input placeholder="Telefone com DDD" type="text" id="telefone" required>
+
+        </div>
+        <div class="payment-section">
+            <label for="forma-pagamento">Forma de Pagamento:</label>
+
+            <select id="forma-pagamento" onchange="mostrarOpcoesPagamento()">
+                <option value="pix">PIX</option>
+                <option value="cartao">Cartão de Crédito</option>
+            </select> 
+        </div>
+        <div id="opcoes-cartao" style="display: none;">
+            <div class="payment-section">
+                <input placeholder="Número do Cartão de Crédito" maxlength="16"  type="text" id="numero-cartao">
+            </div>
+            <div id="info-cartao" class="payment-section">
+                <input placeholder="Mês" type="text" maxlength="2" id="mes" required>
+                <input placeholder="Ano" type="text" maxlength="2" id="ano" required>
+                <input placeholder="Código de Segurança" type="text" maxlength="3" id="codigo-seguranca" required>
+
+
+            </div>
+           
+            <div class="payment-section">
+                <label for="parcelas">Parcelas:</label>
+                <select id="parcelas" onchange="calcularParcelas()">
+                    <option value="1">1x</option>
+                    <option value="2">2x</option>
+                    <option value="3">3x</option>
+                </select>
+            </div>
+            <div class="payment-section">
+                <p id="valor-parcelas"></p>
+            </div>
+        </div>
+        <a href="Pagamento-concluido.html"><button class="pagar" >Concluir Pagamento</button></a>
+        
+
     </div> 
 
 
+    <script>
+        
+    document.addEventListener('DOMContentLoaded', function() {
+        const cartContainer = document.querySelector('.cart-container');
+        const cart = JSON.parse(localStorage.getItem('cart')) || [];
 
+        cart.forEach((product, index) => {
+            const cartItem = document.createElement('div');
+            cartItem.classList.add('cart-item');
+            cartItem.innerHTML = `
+                <img src="${product.image}" alt="${product.name}">
+                <div class="item-details">
+                    <h2>${product.name}</h2>
+                    <p>Preço: ${product.price}</p>
+                    <label for="quantity${index}">Quantidade:</label>
+                    <input type="number" id="quantity${index}" name="quantity${index}" value="${product.quantity}" min="1">
+                </div>
+                <button class="remove-btn" data-index="${index}">Remover</button>
+            `;
+            cartContainer.appendChild(cartItem);
+        });
+
+        calculateTotal();
+    });
+
+    function calculateTotal() {
+        const cart = JSON.parse(localStorage.getItem('cart')) || [];
+        let total = 0;
+        cart.forEach(product => {
+            const price = parseFloat(product.price.replace('R$', '').replace(',', '.'));
+            total += price * product.quantity;
+        });
+        document.querySelector('.cart-total').textContent = `Total: R$ ${total.toFixed(2)}`;
+    }
+
+    //remover itens do carrinho 
+
+    document.addEventListener('click', function(event) {
+        if (event.target.classList.contains('remove-btn')) {
+            const index = event.target.getAttribute('data-index');
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            cart.splice(index, 1);
+            localStorage.setItem('cart', JSON.stringify(cart));
+            event.target.parentElement.remove();
+            calculateTotal();
+        }  
+    }); 
+
+    //atualizando quantidade e total 
+   
+    document.addEventListener('change', function(event) {
+        if (event.target.type === 'number') {
+            const index = event.target.id.replace('quantity', '');
+            const newQuantity = parseInt(event.target.value, 10);
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            cart[index].quantity = newQuantity;
+            localStorage.setItem('cart', JSON.stringify(cart));
+            calculateTotal();
+        }
+    }); 
+
+    
+
+    //opções de pagamento 
+    function finalizarCompra() {
+            document.getElementById('overlay').style.display = 'block';
+            document.getElementById('payment-container').style.display = 'block';
+        }
+
+        function fecharPagamento() {
+            document.getElementById('overlay').style.display = 'none';
+            document.getElementById('payment-container').style.display = 'none';
+        }
+
+        function mostrarOpcoesPagamento() {
+            const formaPagamento = document.getElementById('forma-pagamento').value;
+            const opcoesCartao = document.getElementById('opcoes-cartao');
+            if (formaPagamento === 'cartao') {
+                opcoesCartao.style.display = 'block';
+            } else {
+                opcoesCartao.style.display = 'none';
+            }
+        }
+        
+        //função para calcular parcela 1 
+
+        // function calcularParcelas() {
+        //    let parcelas = document.getElementById('parcelas').value;
+        //    let result = document.getElementById(calculateTotal())
+        //    let valorParcela = result / parcelas;
+        //     document.getElementById('valor-parcelas').innerText = 'Valor de cada parcela: R$ ' + valorParcela.toFixed(2);
+
+        //     calcularParcelas()
+        // }
+
+        //função para calcular parcela 2 
+
+//         let valorTotal = calculateTotal(); 
+        
+//         function calcularParcelas(valorTotal) {
+//   // Verifica se o valor total é válido
+//         if (valorTotal <= 0) {
+//             return "O valor total deve ser maior que zero.";
+//         } 
+
+//         // Calcula as parcelas
+//         let parcelas = [];
+//         for (let i = 1; i <= 3; i++) {
+//             let valorParcela = valorTotal / i;
+//             parcelas.push({
+//             numeroParcelas: i,
+//             valorParcela: valorParcela.toFixed(2)
+//             });
+//   }
+
+//   return parcelas;
+// } 
+
+// let parcelas = calcularParcelas(valorTotal); 
+//     document.getElementById("valor-parcelas").innerText = 'Valor de cada parcela: R$ ' + valorParcela.toFixed(2);
+
+
+
+    </script>
 
 </body>
 </html>
