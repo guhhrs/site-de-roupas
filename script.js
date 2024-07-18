@@ -45,4 +45,4 @@ nextButton.addEventListener('click', () => {
 prevButton.addEventListener('click', () => {
   currentIndex = (currentIndex - 1 + itens.length) % itens.length;
   showItem(currentIndex);
-});
+}); 
