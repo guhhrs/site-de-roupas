@@ -7,13 +7,13 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Gruppo&family=Rokkitt:ital,wght@0,100..900;1,100..900&family=Tenor+Sans&display=swap" rel="stylesheet">
-
-    
+    <link rel="website icon" href="imagens/Design sem nome.svg">
     <style>
         body {
     font-family: "Tenor Sans", sans-serif;
     margin: 0;
     padding: 0;
+    text-decoration: none;
 }
 
 
@@ -81,6 +81,15 @@ ul.nav-right img {
     width: 2.5rem;
     height: 2.5rem;
 }
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: .625rem;
+    position: static;
+    bottom: 0;
+    width: 98.8vw;
+}
 
 .logo img {
     width: 5.625rem;
@@ -119,6 +128,59 @@ ul.nav-right img {
     margin-top: -0.3125rem;
 }  
 
+.produtos--collab{
+    width: 182px;
+    max-width: 12.5rem;
+    height: auto;
+    margin-bottom: .625rem;
+}
+.camisa-collab{
+    width: 190px;
+
+} 
+.produtos--collab{ 
+    color: black;
+    text-align: center;
+    text-decoration-line: none;
+    text-decoration: underline white;
+    margin: 0 auto; 
+    margin-top: 60px;
+    margin-bottom: 140px; 
+    
+}   
+.produtos--collab:hover{
+    text-align: center;
+    transition: 0.3s;
+}
+
+
+.produtos--collab .camisa-collab:hover{
+    width: 250px;   
+    text-align: center;
+    transition: 0.3s;
+}
+
+
+.pages1:hover{
+    color: gray;
+    text-decoration-line: underline;
+} 
+.pages2:hover{
+    color: gray;
+    text-decoration-line: underline;
+} 
+.pages3:hover{
+    color: gray;
+    text-decoration-line: underline;
+} 
+.pages4:hover{
+    color: gray;
+    text-decoration-line: underline;
+} 
+.pages5:hover{
+    color: gray;
+    text-decoration-line: underline;
+} 
 
     </style>
 </head>
@@ -130,11 +192,11 @@ ul.nav-right img {
                 <img src="imagens/1of1-logo1.webp" alt="logo">
             </div>
 
-            <li><a href="index.html" target="_self">Início</a></li>
-            <li><a href="produtos.html" target="_self">Produtos</a></li>
-            <li><a href="sobre.html" target="_self">Sobre</a></li>
-            <li><a href="galeria.html" target="_self">Galeria</a></li>
-            <li><a href="Collab.html" target="_self">Collab</a></li>
+            <li><a class="pages1" href="index.html" target="_self">Início</a></li>
+            <li><a class="pages2" href="produtos.html" target="_self">Produtos</a></li>
+            <li><a class="pages3" href="sobre.html" target="_self">Sobre</a></li>
+            <li><a class="pages4" href="galeria.html" target="_self">Galeria</a></li>
+            <li><a class="pages5" href="Collab.html" target="_self">Collab</a></li>
 
         </ul>
             
@@ -152,18 +214,26 @@ ul.nav-right img {
         </ul>
     </nav>
 
-    <div><img class="img--banner" src="imagens/sks x 1of1.png" alt="">
+    <div><img class="img--banner" src="imagens/sks-x-1of1-_1_.webp" alt="">
         <img class="img--banner2" src="imagens/peças limitadas (1).png" alt="">
     
-    </div>  
+    </div>      
 
-    <video src="imagens/gif_sks.mp4" loop autoplay></video>
-    
-
-
-    <div class="produtos--colab"></div>
-    <div class="produtos--colab"></div>
-    <div class="produtos--colab"></div>
-
-</body>
-</html>
+<a href="produto-collab1.html">
+    <div class="produtos--collab">
+    <img class="camisa-collab" src="imagens/camisa-collab.svg" alt="">
+    <h2 id="title">1of1 x SKS - Move or Die</h2>
+    <p id="descricao">preço: R$259,99 BRL</p>
+    </div>   
+</a>  
+    </div>   
+  
+  
+    <footer>  
+        <p>Política de Envios | Política de Privacidade | Políticas de Trocas e Devoluções</p> 
+        <p>EXCLUSIVISTA LTDA. | 51.880.852/0001-51</p> 
+        <p>Rua Harmonia, 857 | 05435-001</p>  
+    </footer>  
+ 
+</body> 
+</html> 

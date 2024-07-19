@@ -47,6 +47,26 @@ nav ul.nav-right li a img {
 main {
     padding: 0rem;
 }
+.pages1:hover{
+    color: gray;
+    text-decoration-line: underline;
+} 
+.pages2:hover{
+    color: gray;
+    text-decoration-line: underline;
+} 
+.pages3:hover{
+    color: gray;
+    text-decoration-line: underline;
+} 
+.pages4:hover{
+    color: gray;
+    text-decoration-line: underline;
+} 
+.pages5:hover{
+    color: gray;
+    text-decoration-line: underline;
+} 
 
 footer {
     background-color: #333;
