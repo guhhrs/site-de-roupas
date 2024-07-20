@@ -515,26 +515,26 @@ ul.nav-right img {
 
         //função para calcular parcela 2 
 
-//         let valorTotal = calculateTotal(); 
+        let valorTotal = calculateTotal(); 
         
-//         function calcularParcelas(valorTotal) {
-//   // Verifica se o valor total é válido
-//         if (valorTotal <= 0) {
-//             return "O valor total deve ser maior que zero.";
-//         } 
+        function calcularParcelas(valorTotal) {
+  // Verifica se o valor total é válido
+        if (valorTotal <= 0) {
+            return "O valor total deve ser maior que zero.";
+        } 
 
-//         // Calcula as parcelas
-//         let parcelas = [];
-//         for (let i = 1; i <= 3; i++) {
-//             let valorParcela = valorTotal / i;
-//             parcelas.push({
-//             numeroParcelas: i,
-//             valorParcela: valorParcela.toFixed(2)
-//             });
-//   }
+        // Calcula as parcelas
+        let parcelas = [];
+        for (let i = 1; i <= 3; i++) {
+            let valorParcela = valorTotal / i;
+            parcelas.push({
+            numeroParcelas: i,
+            valorParcela: valorParcela.toFixed(2)
+            });
+  }
 
-//   return parcelas;
-// } 
+  return parcelas;
+} 
 
 // let parcelas = calcularParcelas(valorTotal); 
 //     document.getElementById("valor-parcelas").innerText = 'Valor de cada parcela: R$ ' + valorParcela.toFixed(2);
